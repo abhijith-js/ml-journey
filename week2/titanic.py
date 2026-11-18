@@ -8,16 +8,17 @@ df = df.drop(columns=["deck"])
 
 print(df.shape)
 print(df.groupby(["sex", "pclass"])["survived"].mean())
-df.groupby("embarked")["survived"].mean()
+print(df.groupby("embarked")["survived"].mean())
+print(df.groupby("embarked")["sex"].value_counts(normalize=True))
 
 
 print("------------------------------------------------------")
 
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
-rate=df.groupby("pclass")["survived"].mean()
-plt.bar(rate.index,rate.values)
-plt.xlabel("Class")
-plt.ylabel("Survival rate")
-plt.title("survival rate bt class")
-plt.show()
+# rate=df.groupby("pclass")["survived"].mean()
+# plt.bar(rate.index,rate.values)
+# plt.xlabel("Class")
+# plt.ylabel("Survival rate")
+# plt.title("survival rate bt class")
+# plt.show()
