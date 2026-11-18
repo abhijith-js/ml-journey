@@ -10,7 +10,8 @@ print(df.shape)
 print(df.groupby(["sex", "pclass"])["survived"].mean())
 print(df.groupby("embarked")["survived"].mean())
 print(df.groupby("embarked")["sex"].value_counts(normalize=True))
-
+print("----")
+print(df['sex'].value_counts())
 
 print("------------------------------------------------------")
 
@@ -22,3 +23,16 @@ print("------------------------------------------------------")
 # plt.ylabel("Survival rate")
 # plt.title("survival rate bt class")
 # plt.show()
+
+
+import matplotlib.pyplot as plt
+rate=df.groupby("sex")['survived'].mean()
+
+plt.bar(rate.index,rate.values)
+plt.xlabel("Sex")
+plt.ylabel("Survival rate")
+plt.title("Survival rate by sex")
+plt.show()
+
+print("---------")
+print(df.sort_values("fare",ascending=False).head(5))
