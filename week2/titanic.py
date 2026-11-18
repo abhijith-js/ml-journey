@@ -8,6 +8,7 @@ df = df.drop(columns=["deck"])
 
 print(df.shape)
 print(df.groupby(["sex", "pclass"])["survived"].mean())
+df.groupby("embarked")["survived"].mean()
 
 
 print("------------------------------------------------------")
